@@ -627,8 +627,8 @@ int parse_options(int argc, char *argv[])
 					return 1;
 				}
 				npages = strtoul(optarg, NULL, 0);
-				if (npages > 0xFF || npages < 0) {
-					fprintf(stderr, "ERROR: You need to specify a page count between 0 and 255");
+				if (npages < 0) {
+					fprintf(stderr, "ERROR: You need to specify a page count from 0");
 					return 1;
 				}
 				if (!npages)
